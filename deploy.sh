@@ -29,10 +29,20 @@ then
     npm install -g pm2
 fi
 
-echo "🌐 4. 正在通过 pm2 启动/重启静态资源服务..."
-# 使用 pm2 serve 将构建后的 dist 目录作为静态网站服务启动
-# --spa 参数用于支持 React Router 的单页应用（SPA）路由回退到 index.html
-pm2 serve $DIST_DIR $PORT --name "$APP_NAME" --spa
+echo "🌐 4. 正在通过 pm2 启动/重载静态资源服务..."
+# 检查服务是否已经在运行，如果运行则重载服务实现热更新，否则首次启动
+if pm2 describe "$APP_NAME" > /dev/null 2>&1; then
+    echo "🔄 检测到服务已存在，正在执行热重载 (Reload) 以应用更新..."
+    pm2 reload "$APP_NAME"
+else
+    echo "🚀 首次启动服务..."
+    # 使用 pm2 serve 将构建后的 dist 目录作为静态网站服务启动
+    # --spa 参数用于支持 React Router 的单页应用（SPA）路由回退到 index.html
+    pm2 serve $DIST_DIR $PORT --name "$APP_NAME" --spa
+fi
+
+echo "💾 5. 保存 pm2 进程列表，以便开机自启..."
+pm2 save
 
 echo "=========================================="
 echo "✅ 部署成功！"
