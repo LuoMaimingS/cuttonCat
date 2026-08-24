@@ -14,8 +14,8 @@ echo "=========================================="
 echo "🚀 开始部署「再见兄弟第四季」投票网站..."
 echo "=========================================="
 
-echo "📦 1. 正在安装项目依赖..."
-npm install
+echo "📦 1. 正在安装项目依赖 (使用淘宝 npm 镜像加速)..."
+npm install --registry=https://registry.npmmirror.com
 
 echo "🔨 2. 正在进行前端生产环境构建..."
 npm run build
