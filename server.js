@@ -73,7 +73,7 @@ app.get('/api/results', async (req, res) => {
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // 所有未匹配的路由都返回 index.html（支持 React Router SPA）
-app.get('/*', (req, res) => {
+app.get('/(.*)', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
