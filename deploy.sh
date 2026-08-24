@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 部署脚本 - deploy.sh
-# 用于直接在宿主机（如 CentOS, Ubuntu 等 Linux 服务器）上部署前端服务
+# 用于直接在宿主机（如 CentOS, Ubuntu 等 Linux 服务器）上部署前后端全栈服务
 
 # 遇到错误即停止执行
 set -e
@@ -9,16 +9,15 @@ set -e
 # 设置变量
 APP_NAME="cotton-cat-web"
 PORT=8080 # 网站运行的端口号，可以根据需要修改
-DIST_DIR="dist"
 
 echo "=========================================="
-echo "🚀 开始部署「棉花猫」美术培训班官网..."
+echo "🚀 开始部署「再见兄弟第四季」投票网站..."
 echo "=========================================="
 
 echo "📦 1. 正在安装项目依赖..."
 npm install
 
-echo "🔨 2. 正在进行生产环境构建..."
+echo "🔨 2. 正在进行前端生产环境构建..."
 npm run build
 
 echo "✨ 3. 构建完成，检查并安装进程管理工具 pm2..."
@@ -29,16 +28,15 @@ then
     npm install -g pm2
 fi
 
-echo "🌐 4. 正在通过 pm2 启动/重载静态资源服务..."
+echo "🌐 4. 正在通过 pm2 启动/重载全栈 Node.js 服务..."
 # 检查服务是否已经在运行，如果运行则重载服务实现热更新，否则首次启动
 if pm2 describe "$APP_NAME" > /dev/null 2>&1; then
-    echo "🔄 检测到服务已存在，正在执行热重载 (Reload) 以应用更新..."
-    pm2 reload "$APP_NAME"
+    echo "🔄 检测到服务已存在，正在执行重启以应用更新..."
+    PORT=$PORT pm2 restart "$APP_NAME"
 else
     echo "🚀 首次启动服务..."
-    # 使用 pm2 serve 将构建后的 dist 目录作为静态网站服务启动
-    # --spa 参数用于支持 React Router 的单页应用（SPA）路由回退到 index.html
-    pm2 serve $DIST_DIR $PORT --name "$APP_NAME" --spa
+    # 使用 pm2 启动 server.js（内含 Express 提供 API 并托管 dist 静态资源）
+    PORT=$PORT pm2 start server.js --name "$APP_NAME"
 fi
 
 echo "💾 5. 保存 pm2 进程列表，以便开机自启..."

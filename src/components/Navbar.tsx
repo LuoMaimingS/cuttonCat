@@ -5,10 +5,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { name: '作品展示', href: '#gallery' },
-    { name: '活动介绍', href: '#activities' },
-    { name: '学员招募', href: '#recruit' },
-    { name: '学生管理', href: '#management' },
+    { name: '投票首页', href: '#' },
+    { name: '往期回顾', href: '#' },
   ];
 
   return (
@@ -19,8 +17,8 @@ export default function Navbar() {
             <div className="bg-orange-400 p-2 rounded-2xl blob-shape">
               <Cat className="h-8 w-8 text-white" />
             </div>
-            <span className="font-bold text-2xl text-gray-800 tracking-wider">棉花猫</span>
-            <span className="text-xs text-orange-500 font-medium ml-1 bg-orange-100 px-2 py-1 rounded-full">ART</span>
+            <span className="font-bold text-2xl text-gray-800 tracking-wider">再见兄弟</span>
+            <span className="text-xs text-orange-500 font-medium ml-1 bg-orange-100 px-2 py-1 rounded-full">S4</span>
           </div>
           
           <div className="hidden md:flex space-x-8">

@@ -4,10 +4,8 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 text-center space-y-4">
         {/* 通用导航链接 */}
         <div className="flex flex-wrap justify-center items-center gap-6">
-          <a href="#" className="hover:text-gray-800 transition-colors">关于我们</a>
-          <a href="#" className="hover:text-gray-800 transition-colors">联系我们</a>
-          <a href="#" className="hover:text-gray-800 transition-colors">服务条款</a>
-          <a href="#" className="hover:text-gray-800 transition-colors">隐私政策</a>
+          <a href="#" className="hover:text-gray-800 transition-colors">关于再见兄弟</a>
+          <a href="mailto:498738495@qq.com" className="hover:text-gray-800 transition-colors">联系组织者</a>
         </div>
         
         {/* 版权信息与备案号 */}
