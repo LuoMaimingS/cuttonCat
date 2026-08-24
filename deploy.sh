@@ -14,6 +14,10 @@ echo "=========================================="
 echo "🚀 开始部署「再见兄弟第四季」投票网站..."
 echo "=========================================="
 
+echo "🧹 0. 清理可能残留的 npm 缓存和 node_modules (防止 ENOTEMPTY 等错误)..."
+rm -rf node_modules
+npm cache clean --force
+
 echo "📦 1. 正在安装项目依赖 (使用淘宝 npm 镜像加速)..."
 npm install --registry=https://registry.npmmirror.com
 
