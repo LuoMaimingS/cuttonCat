@@ -15,49 +15,49 @@ const POSTS = [
   {
     title: '棉花猫瞬间 01',
     subtitle: '今天新加入相册的第一张画面',
-    image: galleryAsset('微信图片_20260908210507_10_45.jpg'),
+    image: galleryAsset('preview/preview-01.jpg'),
     location: '棉花猫 / 作品展示',
     tags: ['新图', '精选', '记录']
   },
   {
     title: '棉花猫瞬间 02',
     subtitle: '把现场感保留在全屏图文里',
-    image: galleryAsset('微信图片_20260908210511_11_45.jpg'),
+    image: galleryAsset('preview/preview-02.jpg'),
     location: '棉花猫 / 作品展示',
     tags: ['新图', '现场', '图集']
   },
   {
     title: '棉花猫瞬间 03',
     subtitle: '顺着图片浏览这一组新素材',
-    image: galleryAsset('微信图片_20260908210513_12_45.jpg'),
+    image: galleryAsset('preview/preview-03.jpg'),
     location: '棉花猫 / 作品展示',
     tags: ['新图', '浏览', '相册']
   },
   {
     title: '棉花猫瞬间 04',
     subtitle: '适合移动端滑动浏览的竖版展示',
-    image: galleryAsset('微信图片_20260908210515_13_45.jpg'),
+    image: galleryAsset('preview/preview-04.jpg'),
     location: '棉花猫 / 作品展示',
     tags: ['新图', '竖屏', '沉浸']
   },
   {
     title: '棉花猫瞬间 05',
     subtitle: '当前页面已切换为本地图片素材',
-    image: galleryAsset('微信图片_20260908210520_14_45.jpg'),
+    image: galleryAsset('preview/preview-05.jpg'),
     location: '棉花猫 / 作品展示',
     tags: ['新图', '本地', '页面']
   },
   {
     title: '棉花猫瞬间 06',
     subtitle: '保留点赞、收藏、切换这些交互',
-    image: galleryAsset('微信图片_20260908210522_15_45.jpg'),
+    image: galleryAsset('preview/preview-06.jpg'),
     location: '棉花猫 / 作品展示',
     tags: ['新图', '互动', '收藏']
   },
   {
     title: '棉花猫瞬间 07',
     subtitle: '这组 7 张图已经进入当前前端展示',
-    image: galleryAsset('微信图片_20260908210524_16_45.jpg'),
+    image: galleryAsset('preview/preview-07.jpg'),
     location: '棉花猫 / 作品展示',
     tags: ['新图', '完成', '图集']
   }
