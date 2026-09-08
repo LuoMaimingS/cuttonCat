@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { MapPin, CheckCircle2, BarChart3, UserCircle2, LogIn } from 'lucide-react';
+import PreviewApp from './PreviewApp';
 
 import xinjiangImg from './assets/destinations/xinjiang_v2.jpg';
 import qinghaiImg from './assets/destinations/qinghai.jpg';
@@ -73,7 +74,7 @@ const setCookie = (name: string, value: string, days = 30) => {
   document.cookie = `${name}=${encodeURIComponent(value)};expires=${d.toUTCString()};path=/`;
 };
 
-function App() {
+function VoteApp() {
   const [loggedInUser, setLoggedInUser] = useState(() => getCookie('username'));
   const [loginInput, setLoginInput] = useState('');
   
@@ -423,6 +424,14 @@ function App() {
       <Footer />
     </div>
   );
+}
+
+function App() {
+  if (window.location.hostname === 'preview.mianhuamao.cn' || window.location.pathname === '/preview') {
+    return <PreviewApp />;
+  }
+
+  return <VoteApp />;
 }
 
 export default App;

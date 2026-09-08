@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Runtime gallery images live outside the repo, normally in ~/assets.
+/assets/
+/微信图片_*.jpg
+/src/assets/posts/微信图片_*.jpg
+/src/assets/posts/cotton-cat-*.jpg
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
