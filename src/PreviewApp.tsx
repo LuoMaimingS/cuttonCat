@@ -13,53 +13,53 @@ const galleryAsset = (fileName: string) => `/gallery-assets/${fileName}`;
 
 const POSTS = [
   {
-    title: '棉花猫瞬间 01',
-    subtitle: '今天新加入相册的第一张画面',
+    title: '檐下初见',
+    subtitle: '黛瓦与凌霄花之间，一抹浅紫旗袍从园林小径里走来。',
     image: galleryAsset('preview/preview-01.jpg'),
-    location: '棉花猫 / 作品展示',
-    tags: ['新图', '精选', '记录']
+    location: '江南园林 / 檐下',
+    tags: ['黛瓦', '旗袍', '暮色']
   },
   {
-    title: '棉花猫瞬间 02',
-    subtitle: '把现场感保留在全屏图文里',
+    title: '光影入画',
+    subtitle: '门扉投下斑驳树影，安静的侧脸停在午后光线里。',
     image: galleryAsset('preview/preview-02.jpg'),
-    location: '棉花猫 / 作品展示',
-    tags: ['新图', '现场', '图集']
+    location: '园中小景 / 光影',
+    tags: ['侧影', '树影', '团扇']
   },
   {
-    title: '棉花猫瞬间 03',
-    subtitle: '顺着图片浏览这一组新素材',
+    title: '水边回眸',
+    subtitle: '湖面碎光映着花枝，镜头把这一刻收得温柔而明亮。',
     image: galleryAsset('preview/preview-03.jpg'),
-    location: '棉花猫 / 作品展示',
-    tags: ['新图', '浏览', '相册']
+    location: '临水取景 / 波光',
+    tags: ['波光', '花束', '回眸']
   },
   {
-    title: '棉花猫瞬间 04',
-    subtitle: '适合移动端滑动浏览的竖版展示',
+    title: '扇底清风',
+    subtitle: '折扇轻抬，园石与绿意把夏日的层次铺开。',
     image: galleryAsset('preview/preview-04.jpg'),
-    location: '棉花猫 / 作品展示',
-    tags: ['新图', '竖屏', '沉浸']
+    location: '园林午后 / 折扇',
+    tags: ['折扇', '浅紫', '夏意']
   },
   {
-    title: '棉花猫瞬间 05',
-    subtitle: '当前页面已切换为本地图片素材',
+    title: '栏边照影',
+    subtitle: '团扇借来一束高光，木栏与水色托住从容的姿态。',
     image: galleryAsset('preview/preview-05.jpg'),
-    location: '棉花猫 / 作品展示',
-    tags: ['新图', '本地', '页面']
+    location: '水榭回廊 / 栏边',
+    tags: ['团扇', '逆光', '水榭']
   },
   {
-    title: '棉花猫瞬间 06',
-    subtitle: '保留点赞、收藏、切换这些交互',
+    title: '风过发梢',
+    subtitle: '回廊深处的风掠过发丝，亮处与暗处都刚刚好。',
     image: galleryAsset('preview/preview-06.jpg'),
-    location: '棉花猫 / 作品展示',
-    tags: ['新图', '互动', '收藏']
+    location: '回廊光影 / 逆光',
+    tags: ['回廊', '微风', '逆光']
   },
   {
-    title: '棉花猫瞬间 07',
-    subtitle: '这组 7 张图已经进入当前前端展示',
+    title: '亭畔留白',
+    subtitle: '远处亭影虚化成背景，画面把目光留给安静的神情。',
     image: galleryAsset('preview/preview-07.jpg'),
-    location: '棉花猫 / 作品展示',
-    tags: ['新图', '完成', '图集']
+    location: '古亭水岸 / 留白',
+    tags: ['亭影', '留白', '人像']
   }
 ];
 
@@ -155,11 +155,11 @@ export default function PreviewApp() {
 
         <header className="pointer-events-none absolute left-0 right-0 top-0 z-20 flex items-center justify-between px-5 py-5 sm:px-8">
           <div>
-            <p className="text-[11px] font-black uppercase tracking-[0.46em] text-white/48">Preview</p>
-            <h1 className="mt-1 text-xl font-black tracking-tight text-white sm:text-2xl">棉花猫图集</h1>
+            <p className="text-[11px] font-black uppercase tracking-[0.46em] text-white/48">Gallery</p>
+            <h1 className="mt-1 text-xl font-black tracking-tight text-white sm:text-2xl">园林人像</h1>
           </div>
           <div className="pointer-events-auto rounded-full border border-white/16 bg-black/36 px-4 py-2 text-sm font-bold text-white/82 backdrop-blur-md">
-            图文模式
+            园林写真
           </div>
         </header>
 
