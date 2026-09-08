@@ -13,11 +13,11 @@ const galleryAsset = (fileName: string) => `/gallery-assets/${fileName}`;
 
 const POSTS = [
   {
-    title: '檐下初见',
-    subtitle: '黛瓦与凌霄花之间，一抹浅紫旗袍从园林小径里走来。',
-    image: galleryAsset('preview/preview-01.jpg'),
-    location: '江南园林 / 檐下',
-    tags: ['黛瓦', '旗袍', '暮色']
+    title: '风过发梢',
+    subtitle: '回廊深处的风掠过发丝，亮处与暗处都刚刚好。',
+    image: galleryAsset('preview/preview-06.jpg'),
+    location: '回廊光影 / 逆光',
+    tags: ['回廊', '微风', '逆光']
   },
   {
     title: '光影入画',
@@ -48,11 +48,11 @@ const POSTS = [
     tags: ['团扇', '逆光', '水榭']
   },
   {
-    title: '风过发梢',
-    subtitle: '回廊深处的风掠过发丝，亮处与暗处都刚刚好。',
-    image: galleryAsset('preview/preview-06.jpg'),
-    location: '回廊光影 / 逆光',
-    tags: ['回廊', '微风', '逆光']
+    title: '檐下初见',
+    subtitle: '黛瓦与凌霄花之间，一抹浅紫旗袍从园林小径里走来。',
+    image: galleryAsset('preview/preview-01.jpg'),
+    location: '江南园林 / 檐下',
+    tags: ['黛瓦', '旗袍', '暮色']
   },
   {
     title: '亭畔留白',
@@ -153,12 +153,12 @@ export default function PreviewApp() {
           ))}
         </div>
 
-        <header className="pointer-events-none absolute left-0 right-0 top-0 z-20 flex items-center justify-between px-5 py-5 sm:px-8">
+        <header className="pointer-events-none absolute left-0 right-0 top-0 z-20 flex items-center justify-between px-4 py-4 sm:px-6">
           <div>
-            <p className="text-[11px] font-black uppercase tracking-[0.46em] text-white/48">Gallery</p>
-            <h1 className="mt-1 text-xl font-black tracking-tight text-white sm:text-2xl">园林人像</h1>
+            <p className="text-[10px] font-black uppercase tracking-[0.36em] text-white/42">Gallery</p>
+            <h1 className="mt-1 text-lg font-black tracking-tight text-white sm:text-xl">园林人像</h1>
           </div>
-          <div className="pointer-events-auto rounded-full border border-white/16 bg-black/36 px-4 py-2 text-sm font-bold text-white/82 backdrop-blur-md">
+          <div className="pointer-events-auto rounded-full border border-white/16 bg-black/32 px-3 py-1.5 text-xs font-bold text-white/78 backdrop-blur-md">
             园林写真
           </div>
         </header>
@@ -178,67 +178,67 @@ export default function PreviewApp() {
           <ChevronRight className="h-7 w-7" />
         </button>
 
-        <aside className="absolute bottom-32 right-4 z-20 flex flex-col items-center gap-4 sm:bottom-36 sm:right-[calc(50vw-min(50vw,calc((100vh-32px)*0.33335))+18px)]">
+        <aside className="absolute bottom-28 right-3 z-20 flex flex-col items-center gap-3 sm:bottom-32 sm:right-[calc(50vw-min(50vw,calc((100vh-32px)*0.33335))+14px)]">
           <button
             onClick={() => toggleValue(activePost.title, likedPosts, setLikedPosts)}
-            className={`flex h-14 w-14 items-center justify-center rounded-full border text-white shadow-xl shadow-black/30 backdrop-blur-md transition active:scale-95 ${
+            className={`flex h-12 w-12 items-center justify-center rounded-full border text-white shadow-xl shadow-black/30 backdrop-blur-md transition active:scale-95 sm:h-[52px] sm:w-[52px] ${
               liked
                 ? 'border-rose-300 bg-rose-500'
                 : 'border-white/18 bg-white/14 hover:bg-white/24'
             }`}
             aria-label={liked ? '取消喜欢' : '喜欢'}
           >
-            <Heart className={`h-7 w-7 ${liked ? 'fill-white' : ''}`} />
+            <Heart className={`h-6 w-6 ${liked ? 'fill-white' : ''}`} />
           </button>
 
           <button
-            className="flex h-14 w-14 items-center justify-center rounded-full border border-white/18 bg-white/14 text-white shadow-xl shadow-black/30 backdrop-blur-md transition hover:bg-white/24 active:scale-95"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-white/18 bg-white/14 text-white shadow-xl shadow-black/30 backdrop-blur-md transition hover:bg-white/24 active:scale-95 sm:h-[52px] sm:w-[52px]"
             aria-label="评论"
           >
-            <MessageCircle className="h-7 w-7" />
+            <MessageCircle className="h-6 w-6" />
           </button>
 
           <button
             onClick={() => toggleValue(activePost.title, savedPosts, setSavedPosts)}
-            className={`flex h-14 w-14 items-center justify-center rounded-full border text-white shadow-xl shadow-black/30 backdrop-blur-md transition hover:bg-white/24 active:scale-95 ${
+            className={`flex h-12 w-12 items-center justify-center rounded-full border text-white shadow-xl shadow-black/30 backdrop-blur-md transition hover:bg-white/24 active:scale-95 sm:h-[52px] sm:w-[52px] ${
               saved ? 'border-amber-300 bg-amber-400/80' : 'border-white/18 bg-white/14'
             }`}
             aria-label={saved ? '取消收藏' : '收藏'}
           >
-            <Bookmark className={`h-7 w-7 ${saved ? 'fill-white' : ''}`} />
+            <Bookmark className={`h-6 w-6 ${saved ? 'fill-white' : ''}`} />
           </button>
 
           <button
-            className="flex h-14 w-14 items-center justify-center rounded-full border border-white/18 bg-white/14 text-white shadow-xl shadow-black/30 backdrop-blur-md transition hover:bg-white/24 active:scale-95"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-white/18 bg-white/14 text-white shadow-xl shadow-black/30 backdrop-blur-md transition hover:bg-white/24 active:scale-95 sm:h-[52px] sm:w-[52px]"
             aria-label="分享"
           >
-            <Share2 className="h-7 w-7" />
+            <Share2 className="h-6 w-6" />
           </button>
         </aside>
 
         <section
-          className="absolute bottom-0 left-0 right-20 z-20 px-5 pb-7 sm:left-1/2 sm:right-auto sm:w-[min(100vw,calc((100vh-32px)*0.6667))] sm:-translate-x-1/2 sm:px-6 sm:pb-10"
+          className="absolute bottom-0 left-0 right-16 z-20 px-4 pb-6 sm:left-1/2 sm:right-auto sm:w-[min(100vw,calc((100vh-32px)*0.6667))] sm:-translate-x-1/2 sm:px-5 sm:pb-9"
         >
-          <div className="mb-4 flex items-center gap-2">
-            <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-black">
+          <div className="mb-3 flex items-center gap-2">
+            <span className="rounded-full bg-white px-2.5 py-0.5 text-[11px] font-black text-black">
               {String(currentIndex + 1).padStart(2, '0')} / {POSTS.length}
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full border border-white/16 bg-black/30 px-3 py-1 text-xs font-bold text-white/78 backdrop-blur">
+            <span className="inline-flex items-center gap-1 rounded-full border border-white/16 bg-black/28 px-2.5 py-0.5 text-[11px] font-bold text-white/76 backdrop-blur">
               <MapPin className="h-3 w-3" />
               {activePost.location}
             </span>
           </div>
 
-          <h2 className="max-w-3xl text-4xl font-black leading-none tracking-tight text-white drop-shadow-2xl sm:text-6xl">
+          <h2 className="max-w-2xl text-3xl font-black leading-tight tracking-normal text-white drop-shadow-2xl sm:text-4xl">
             {activePost.title}
           </h2>
-          <p className="mt-3 max-w-2xl text-base font-semibold leading-7 text-white/76 sm:text-lg">
+          <p className="mt-2 max-w-xl text-sm font-semibold leading-6 text-white/74 sm:text-base">
             {activePost.subtitle}
           </p>
 
-          <div className="mt-5 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2">
             {activePost.tags.map((tag) => (
-              <span key={tag} className="rounded-full border border-white/14 bg-white/10 px-3 py-1 text-xs font-black text-white/78 backdrop-blur-md">
+              <span key={tag} className="rounded-full border border-white/14 bg-white/10 px-2.5 py-0.5 text-[11px] font-black text-white/76 backdrop-blur-md">
                 #{tag}
               </span>
             ))}
