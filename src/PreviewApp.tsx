@@ -217,28 +217,28 @@ export default function PreviewApp() {
         </aside>
 
         <section
-          className="absolute bottom-0 left-0 right-16 z-20 px-4 pb-6 sm:left-1/2 sm:right-auto sm:w-[min(100vw,calc((100vh-32px)*0.6667))] sm:-translate-x-1/2 sm:px-5 sm:pb-9"
+          className="absolute bottom-0 left-0 right-16 z-20 px-4 pb-5 sm:left-1/2 sm:right-auto sm:w-[min(100vw,calc((100vh-32px)*0.6667))] sm:-translate-x-1/2 sm:px-5 sm:pb-8"
         >
-          <div className="mb-3 flex items-center gap-2">
-            <span className="rounded-full bg-white px-2.5 py-0.5 text-[11px] font-black text-black">
+          <div className="mb-2.5 flex items-center gap-1.5">
+            <span className="rounded-full bg-white px-2.5 py-0.5 text-[10px] font-black text-black">
               {String(currentIndex + 1).padStart(2, '0')} / {POSTS.length}
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full border border-white/16 bg-black/28 px-2.5 py-0.5 text-[11px] font-bold text-white/76 backdrop-blur">
-              <MapPin className="h-3 w-3" />
+            <span className="inline-flex items-center gap-1 rounded-full border border-white/16 bg-black/28 px-2.5 py-0.5 text-[10px] font-bold text-white/74 backdrop-blur">
+              <MapPin className="h-2.5 w-2.5" />
               {activePost.location}
             </span>
           </div>
 
-          <h2 className="max-w-2xl text-3xl font-black leading-tight tracking-normal text-white drop-shadow-2xl sm:text-4xl">
+          <h2 className="max-w-lg text-2xl font-black leading-tight tracking-normal text-white drop-shadow-2xl sm:text-3xl">
             {activePost.title}
           </h2>
-          <p className="mt-2 max-w-xl text-sm font-semibold leading-6 text-white/74 sm:text-base">
+          <p className="mt-1.5 max-w-md text-xs font-semibold leading-5 text-white/70 sm:text-sm sm:leading-6">
             {activePost.subtitle}
           </p>
 
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-3 flex flex-wrap gap-1.5">
             {activePost.tags.map((tag) => (
-              <span key={tag} className="rounded-full border border-white/14 bg-white/10 px-2.5 py-0.5 text-[11px] font-black text-white/76 backdrop-blur-md">
+              <span key={tag} className="rounded-full border border-white/14 bg-white/10 px-2 py-0.5 text-[10px] font-black text-white/72 backdrop-blur-md">
                 #{tag}
               </span>
             ))}
