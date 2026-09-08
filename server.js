@@ -8,12 +8,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const homeDir = process.env.HOME || process.env.USERPROFILE || '';
 const galleryAssetsDir = process.env.GALLERY_ASSETS_DIR || path.join(homeDir, 'assets');
-const PREVIEW_HOST = 'preview.mianhuamao.cn';
-
-const isPreviewHost = (req) => {
-    const host = req.headers['x-forwarded-host'] || req.headers.host || '';
-    return String(host).split(',')[0].split(':')[0] === PREVIEW_HOST;
-};
 
 const app = express();
 app.use(cors());
@@ -84,13 +78,6 @@ app.use('/gallery-assets', express.static(galleryAssetsDir, {
 
 app.use('/gallery-assets', (req, res) => {
     res.status(404).send('Asset not found');
-});
-
-app.get('/', (req, res, next) => {
-    if (isPreviewHost(req)) {
-        return res.redirect(302, '/preview');
-    }
-    next();
 });
 
 // 托管前端静态文件

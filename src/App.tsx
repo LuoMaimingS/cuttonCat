@@ -427,7 +427,7 @@ function VoteApp() {
 }
 
 function App() {
-  if (window.location.hostname === 'preview.mianhuamao.cn' || window.location.pathname === '/preview') {
+  if (window.location.pathname === '/zy/preview') {
     return <PreviewApp />;
   }
 
